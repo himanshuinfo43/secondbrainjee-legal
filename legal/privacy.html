@@ -335,7 +335,7 @@
   <h1>Privacy Policy</h1>
   <div class="hero-meta">
     <span>📅 Effective: June 1, 2025</span>
-    <span>🔄 Last Updated: June 1, 2025</span>
+    <span>🔄 Last Updated: June 7, 2025</span>
     <span>🇮🇳 Jurisdiction: India</span>
   </div>
 </div>
@@ -395,7 +395,7 @@
       <div class="card-item">
         <div class="card-item-icon">📊</div>
         <div class="card-item-title">Usage Analytics</div>
-        <div class="card-item-desc">App events, session duration, feature interactions, and crash reports.</div>
+        <div class="card-item-desc">App events, session duration, feature interactions, and diagnostic crash reports. Crash reports may include your device model, OS version, app version, and an anonymised user identifier to assist debugging.</div>
       </div>
       <div class="card-item">
         <div class="card-item-icon">🔔</div>
@@ -406,6 +406,11 @@
         <div class="card-item-icon">💳</div>
         <div class="card-item-title">Payment Records</div>
         <div class="card-item-desc">Subscription status, payment date, and order ID from Razorpay. We never store card numbers.</div>
+      </div>
+      <div class="card-item">
+        <div class="card-item-icon">🌙</div>
+        <div class="card-item-title">Night Audit Data</div>
+        <div class="card-item-desc">Daily reflection entries, mood/energy ratings, study hour logs, and self-assessment notes you record in the Night Audit feature. This data is stored in your account and is never shared with third parties.</div>
       </div>
     </div>
   </section>
@@ -433,7 +438,8 @@
     <ul class="styled">
       <li>Files are uploaded securely to Supabase Storage using your authenticated session.</li>
       <li>Files are associated only with your account and are not shared with other users.</li>
-      <li>Uploaded files may be sent to Gemini AI for parsing and extraction — only as needed to fulfill your request.</li>
+      <li>When you use the AI-assisted planner parsing feature, your uploaded file is sent to Google's Gemini API for text extraction and structuring. Files are only transmitted when you explicitly trigger this feature; passive uploads are not automatically sent to any AI service.</li>
+      <li>If you choose to upload a photo of a planner page, the app will request access to your device camera or photo library solely for that purpose. This permission is optional and the app functions without it.</li>
       <li>Files are stored only for as long as your account exists, or until you delete them manually.</li>
     </ul>
     <div class="warning">
@@ -452,7 +458,7 @@
       <li>The AI response is returned and stored in your chat history in Supabase.</li>
       <li>Your conversation history is tied to your account and not shared publicly.</li>
     </ul>
-    <p>Google may process your messages per their <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent2)">Privacy Policy</a> and Gemini API terms. We recommend not sharing personally identifying or highly sensitive information in AI chat.</p>
+    <p>Google processes your messages via the Gemini API solely to generate responses. Per Google's API usage policies, data submitted through the Gemini API is not used to train Google's models by default. However, Google's own data handling is governed by their <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent2)">Privacy Policy</a> and Gemini API Terms, which we recommend reviewing. We do not recommend sharing personally identifying information in AI chat.</p>
     <div class="card">
       <h3 style="margin-top:0">AI Limitations Disclosure</h3>
       <p style="margin-bottom:0">AI responses are generated automatically and may be inaccurate, incomplete, or outdated. Do not rely solely on AI output for critical exam preparation decisions. Always cross-verify with authoritative study materials.</p>
@@ -470,14 +476,14 @@
       <li>Device type, OS version, and app version</li>
       <li>General geographic region (country/state level only)</li>
     </ul>
-    <p>Analytics data is aggregated and cannot be used to identify you individually. We do not use third-party ad networks or sell analytics data.</p>
+    <p>Analytics data is collected at the account level and linked to your user ID for crash diagnosis and support purposes. While we do not use this data for advertising or profiling, it is pseudonymous rather than fully anonymous — it can be associated with your account if required for technical support or debugging. We do not sell this data or share it with ad networks.</p>
   </section>
 
   <!-- 7 -->
   <section id="s7">
     <div class="section-num">07</div>
     <h2>Push Notifications</h2>
-    <p>We use <strong style="color:var(--text)">Firebase Cloud Messaging (FCM)</strong> to send study reminders, mission alerts, and Night Audit notifications.</p>
+    <p>We use <strong style="color:var(--text)">Firebase Cloud Messaging (FCM)</strong> to send study reminders, mission alerts, Night Audit check-in prompts, and transactional notifications such as subscription renewal reminders and payment status updates.</p>
     <ul class="styled">
       <li>Notifications are only sent after you grant permission on your device.</li>
       <li>Your FCM token is stored in our database and linked to your account.</li>
@@ -500,6 +506,10 @@
         <div class="card-item-desc">Stored until you delete individual conversations or your account.</div>
       </div>
       <div class="card-item">
+        <div class="card-item-title">Night Audit Entries</div>
+        <div class="card-item-desc">Stored until you delete individual entries or your account. Not retained after account deletion.</div>
+      </div>
+      <div class="card-item">
         <div class="card-item-title">Planner Files</div>
         <div class="card-item-desc">Deleted when you remove them or delete your account.</div>
       </div>
@@ -509,7 +519,7 @@
       </div>
       <div class="card-item">
         <div class="card-item-title">Analytics</div>
-        <div class="card-item-desc">Anonymized data may be retained indefinitely as it cannot identify you.</div>
+        <div class="card-item-desc">Pseudonymised analytics data (device/session identifiers with no direct name/email) may be retained for up to 3 years for product improvement. Account-linked diagnostics are deleted within 30 days of account deletion.</div>
       </div>
       <div class="card-item">
         <div class="card-item-title">FCM Tokens</div>
@@ -569,6 +579,7 @@
     <a href="mailto:support.secondbrainjee@gmail.com" class="email-btn">
       ✉️ support.secondbrainjee@gmail.com
     </a>
+    <p style="margin-top:20px; font-size:13px; color:var(--muted);">For grievances under the Information Technology Act, 2000 and IT (Intermediary Guidelines) Rules, 2011, you may contact our <strong style="color:var(--text)">Grievance Officer</strong> at: <a href="mailto:support.secondbrainjee@gmail.com" style="color:var(--accent2)">support.secondbrainjee@gmail.com</a>. We will acknowledge your grievance within 24 hours and resolve it within 30 days.</p>
   </div>
 
 </div>
