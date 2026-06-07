@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal — Second Brain for JEE</title>
+  <meta name="description" content="Legal documents for Second Brain for JEE — Privacy Policy, Terms & Conditions, and Refund Policy." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0a0f;
+      --surface:  #111118;
+      --surface2: #18181f;
+      --border:   #ffffff0f;
+      --border2:  #ffffff18;
+      --accent:   #6c63ff;
+      --accent2:  #a78bfa;
+      --gold:     #f0b429;
+      --green:    #34d399;
+      --text:     #e8e8f0;
+      --muted:    #8888a0;
+      --faint:    #44445a;
+      --radius:   16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px; line-height: 1.7;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+
+    /* Grain */
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: .5;
+    }
+
+    /* Ambient glow */
+    .glow {
+      position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,.22) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .glow2 {
+      position: fixed; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(167,139,250,.08) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Header */
+    header {
+      position: relative; z-index: 10;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; gap: 12px; height: 64px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 18px;
+      box-shadow: 0 0 20px rgba(108,99,255,.4);
+    }
+    .logo-text {
+      font-weight: 600; font-size: 16px; color: var(--text); line-height: 1.2;
+    }
+    .logo-sub { font-size: 12px; color: var(--muted); font-weight: 400; }
+
+    /* Hero */
+    .hero {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 80px 24px 64px;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,99,255,.1); border: 1px solid rgba(108,99,255,.22);
+      color: var(--accent2); font-size: 12px; font-weight: 500; letter-spacing: .07em;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 999px; margin-bottom: 28px;
+    }
+    .chip::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.8); }
+    }
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(36px, 7vw, 64px); font-weight: 400;
+      line-height: 1.1; letter-spacing: -.025em; color: #fff;
+      margin-bottom: 20px;
+    }
+    h1 em { font-style: italic; color: var(--accent2); }
+    .hero-desc {
+      color: var(--muted); font-size: 17px; max-width: 520px;
+      margin: 0 auto 48px; line-height: 1.7;
+    }
+
+    /* Stats bar */
+    .stats {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+      border: 1px solid var(--border2);
+      border-radius: 999px; overflow: hidden;
+      max-width: 480px; margin: 0 auto 64px;
+      background: var(--surface);
+    }
+    .stat {
+      padding: 12px 24px; text-align: center; flex: 1;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-val { font-size: 15px; font-weight: 700; color: var(--text); }
+    .stat-label { font-size: 11px; color: var(--faint); margin-top: 2px; }
+
+    /* Cards */
+    .cards-section {
+      position: relative; z-index: 1;
+      padding: 0 24px 80px;
+    }
+    .cards-inner { max-width: 900px; margin: 0 auto; }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .doc-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-decoration: none;
+      display: flex; flex-direction: column;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .doc-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .doc-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .doc-card:hover::before { transform: scaleX(1); }
+    .doc-card:hover { border-color: rgba(108,99,255,.3); }
+
+    .doc-card.privacy::before { background: linear-gradient(90deg, #6c63ff, #a78bfa); }
+    .doc-card.terms::before  { background: linear-gradient(90deg, #f0b429, #fb923c); }
+    .doc-card.refund::before { background: linear-gradient(90deg, #34d399, #06b6d4); }
+
+    .card-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 24px;
+    }
+    .privacy .card-icon { background: rgba(108,99,255,.15); }
+    .terms .card-icon   { background: rgba(240,180,41,.12); }
+    .refund .card-icon  { background: rgba(52,211,153,.12); }
+
+    .card-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .privacy .card-tag { color: var(--accent2); }
+    .terms .card-tag   { color: var(--gold); }
+    .refund .card-tag  { color: var(--green); }
+
+    .card-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22px; font-weight: 400; color: #fff; margin-bottom: 12px; line-height: 1.2;
+    }
+    .card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 28px; }
+
+    .card-points {
+      list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px;
+    }
+    .card-points li {
+      font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px;
+    }
+    .card-points li::before { content: '·'; color: var(--faint); font-size: 20px; line-height: 0; }
+
+    .card-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .cta-text { font-size: 13px; font-weight: 600; color: var(--text); }
+    .cta-arrow {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: transform .2s;
+    }
+    .privacy .cta-arrow { background: rgba(108,99,255,.15); color: var(--accent2); }
+    .terms .cta-arrow   { background: rgba(240,180,41,.12); color: var(--gold); }
+    .refund .cta-arrow  { background: rgba(52,211,153,.12); color: var(--green); }
+    .doc-card:hover .cta-arrow { transform: translateX(4px); }
+
+    /* Info strip */
+    .info-strip {
+      position: relative; z-index: 1;
+      max-width: 900px; margin: 0 auto 64px;
+      padding: 0 24px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+    }
+    .info-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .info-emoji { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .info-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .info-desc  { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* Footer */
+    footer {
+      margin-top: auto; position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 28px 24px; text-align: center;
+      color: var(--faint); font-size: 13px;
+    }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--text); }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-right { display: flex; align-items: center; gap: 8px; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .stats { border-radius: var(--radius); flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+      .stat:last-child { border-bottom: none; }
+      .footer-row { justify-content: center; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (max-width: 900px) and (min-width: 721px) {
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-icon">🧠</div>
+    <div>
+      <div class="logo-text">Second Brain for JEE</div>
+      <div class="logo-sub">Legal Documents</div>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="chip">Legal & Compliance</div>
+  <h1>Transparent by <em>design</em></h1>
+  <p class="hero-desc">Our legal documents are written to be understood, not just accepted. Plain language, clear terms, and honest disclosures.</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val">June 2025</div>
+      <div class="stat-label">Last Updated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">3 Docs</div>
+      <div class="stat-label">Legal Pages</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">🇮🇳 India</div>
+      <div class="stat-label">Jurisdiction</div>
+    </div>
+  </div>
+</div>
+
+<div class="cards-section">
+  <div class="cards-inner">
+    <div class="cards-grid">
+
+      <!-- Privacy -->
+      <a href="legal/privacy.html" class="doc-card privacy">
+        <div class="card-icon">🔐</div>
+        <div class="card-tag">Privacy Policy</div>
+        <div class="card-title">Your Data, Your Rights</div>
+        <div class="card-desc">How we collect, use, and protect your information across authentication, AI chat, planner uploads, and more.</div>
+        <ul class="card-points">
+          <li>Supabase authentication & storage</li>
+          <li>Gemini AI data handling</li>
+          <li>Firebase notification tokens</li>
+          <li>Razorpay payment records</li>
+          <li>Data deletion & retention rules</li>
+        </ul>
+        <div class="card-cta">
+          <span class="cta-text">Read Privacy Policy</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Terms -->
+      <a href="legal/terms.html" class="doc-card terms">
+        <div class="card-icon">📋</div>
+        <div class="card-tag">Terms & Conditions</div>
+        <div class="card-title">Rules of the Road</div>
+        <div class="card-desc">User responsibilities, acceptable use, subscription terms, AI limitations disclaimer, and our liability boundaries.</div>
+        <ul class="card-points">
+          <li>Acceptable use policy</li>
+          <li>AI limitations & disclaimers</li>
+          <li>Subscription & auto-renewal terms</li>
+          <li>Account termination grounds</li>
+          <li>Intellectual property rights</li>
+        </ul>
+        <div class="card-cta">
+          <span class="cta-text">Read Terms & Conditions</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Refund -->
+      <a href="legal/refund.html" class="doc-card refund">
+        <div class="card-icon">💸</div>
+        <div class="card-tag">Refund Policy</div>
+        <div class="card-title">Fair Refund Process</div>
+        <div class="card-desc">How Razorpay payments work, when you're eligible for a refund, how to request one, and our anti-abuse protections.</div>
+        <ul class="card-points">
+          <li>Razorpay payment processing</li>
+          <li>Refund eligibility criteria</li>
+          <li>Step-by-step request process</li>
+          <li>Cancellation instructions</li>
+          <li>Chargeback dispute process</li>
+        </ul>
+        <div class="card-cta">
+          <span class="cta-text">Read Refund Policy</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- Info strip -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-emoji">🏛️</div>
+    <div>
+      <div class="info-title">Governed by Indian Law</div>
+      <div class="info-desc">All policies comply with Indian IT Act 2000, IT Rules 2011, and Consumer Protection Act 2019.</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-emoji">📧</div>
+    <div>
+      <div class="info-title">Human Support</div>
+      <div class="info-desc">Questions? Email <a href="mailto:support.secondbrainjee@gmail.com" style="color:var(--accent2)">support.secondbrainjee@gmail.com</a> — real replies within 48 hours.</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-emoji">🔄</div>
+    <div>
+      <div class="info-title">Kept Up to Date</div>
+      <div class="info-desc">We notify users in-app before making material changes to any legal document.</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-emoji">🛡️</div>
+    <div>
+      <div class="info-title">Play Store Compliant</div>
+      <div class="info-desc">These documents meet Google Play's requirements for subscription disclosure, data safety, and user rights.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-row">
+      <div>© 2025 Second Brain for JEE. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="legal/privacy.html">Privacy</a>
+        <a href="legal/terms.html">Terms</a>
+        <a href="legal/refund.html">Refunds</a>
+        <a href="mailto:support.secondbrainjee@gmail.com">Support</a>
+      </div>
+      <div class="footer-right">
+        <div class="status-dot"></div>
+        <span>All systems operational</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
